@@ -1,0 +1,17 @@
+---
+#configuring httpd
+- name: httpd configuration file
+  copy:
+     src=httpd.conf
+     dest=/etc/httpd/httpd.conf
+  notify: restart apache service
+
+- name: create the webpage index.html
+  copy: 
+     src=/etc/ansible/roles/apache/files/index.html
+     dest=/var/www/html/index.html 
+
+- name: copy the image resource
+  copy:
+     src=/etc/ansible/roles/apache/files/Blue_marble_2015.jpg  
+     dest=/var/www/html/Blue_marble_2015.jpg

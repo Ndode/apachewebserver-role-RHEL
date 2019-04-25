@@ -1,0 +1,4 @@
+---
+- hosts: 167.99.170.18
+  roles:
+  - apache
